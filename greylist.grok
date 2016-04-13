@@ -1,2 +1,2 @@
-POSTGREY_ACTION action=%{WORD:action}, reason=%{GREEDYDATA:reason}, (delay=%{INT:delay},)? client_name=%{HOST:client_hostname}, client_address=%{IP:client_ip}, sender=%{GREEDYDATA:sender}, recipient=%{GREEDYDATA:recipient}
+POSTGREY_ACTION action=%{WORD:action}, reason=%{GREEDYDATA:reason}, (delay=%{INT:delay},)? client_name=%{HOSTNAME:client_hostname}, client_address=%{IP:client_ip}, sender=%{GREEDYDATA:sender}, recipient=%{GREEDYDATA:recipient}
 POSTGREY_CLEAN cleaning up old logs...

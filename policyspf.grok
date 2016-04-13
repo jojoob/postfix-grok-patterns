@@ -1,1 +1,1 @@
-POLICYDSPF_ACTION %{WORD:action}; identity=%{WORD:identity}; client-ip=%{IP:client_ip}; helo=%{HOST:helo_name}; envelope-from=%{GREEDYDATA:envelope_from}; receiver=%{GREEDYDATA:receiver}
+POLICYDSPF_ACTION %{WORD:action}; identity=%{WORD:identity}; client-ip=%{IP:client_ip}; helo=%{HOSTNAME:helo_name}; envelope-from=%{GREEDYDATA:envelope_from}; receiver=%{GREEDYDATA:receiver}
