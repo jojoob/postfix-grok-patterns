@@ -15,7 +15,7 @@ require 'yaml'
 class TestGrokPatterns < MiniTest::Unit::TestCase
 
     @@test_dir = File.dirname(__FILE__)
-    @@upstream_pattern_dir = @@test_dir + '/logstash/patterns'
+    @@upstream_pattern_dir = @@test_dir + '/logstash-patterns-core/patterns'
     @@local_pattern_dir = File.dirname(File.expand_path(@@test_dir))
 
     # Prepare a grok object.
@@ -49,7 +49,7 @@ class TestGrokPatterns < MiniTest::Unit::TestCase
         assert @grok.compile("%{" + pattern + "}", true), "Failed to compile pattern #{pattern}"
         assert matches = @grok.match(data), "Pattern #{pattern} did not match data."
 
-        return if results.nil?
+        refute_equal results, nil, "Test case is flawed, no results are defined"
         captures = matches.captures()
         results.each do |field, expected|
             assert_includes captures.keys, field
